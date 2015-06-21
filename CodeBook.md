@@ -75,3 +75,12 @@ activity pair.  The data colums are as follows:
  1. fBodyBodyGyroMag.std.avg (numeric): average of UCI feature
  1. fBodyBodyGyroJerkMag.std.avg (numeric): average of UCI feature
 
+## Notes on Feature Units
+
+The units for the average features are the same as the UCI feature data.
+While the original data was recorded as raw sensor readingd (probably raw
+ADC values), and converted to Gs (accelerometer) and radians/second
+(gyro), the feature file (X\_\*.txt) values have been normalized into the
+range [-1, 1].  This is documented in the README.txt file supplied with
+the UCI data set.
+
