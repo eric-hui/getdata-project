@@ -22,11 +22,12 @@ A number of steps are applied to the "UCI HAR Dataset" as follows:
 
 The dataset has 561 feature variables, however we are only interested in
 the 66 that represent the mean() and std() of observations.  The 
-"UCI HAR Dataset/features.txt" file prodes a listing of all 561 variables
+"UCI HAR Dataset/features.txt" file provides a listing of all 561 variables
 along with the column index.  The standard unix grep tool was used to
 extract the variables of interest:
 
 > grep mean\(\) features.txt > extractFeatures.txt
+
 > grep std\(\) features.txt >> extractFeatures.txt
 
 The extractFeatures.txt was then manually edited to rename the features:
@@ -49,8 +50,16 @@ Each individual data set is loaded and modified as follows:
     column "Activity"
  3. load the X\_\*.txt file.  pass the data through a filtering function
     that extract only the mean() and std() variables and names the columns
-    appropriately.
+    appropriately (see below).
  4. column merge the 3 data sets above in the order listed
+
+### Extracting (Filtering)  Feature Variables
+
+The extractFeatures.txt file (described above) was used to extract a
+subset of the variables present in the UCI dataset.  Each row in the
+extractFeatures.txt file has a column number and a variable name.  Each of
+these columns was extracted from the UCI dataset features and the
+corresponding variable name applied to the column.
 
 ### Merging the UCI Data
 
